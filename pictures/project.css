@@ -1,0 +1,93 @@
+
+.header{background-color: orange;
+
+}
+
+ ul li a {
+     
+    display: inline-block;
+    
+}
+li a:hover{
+    background-color: yellowgreen;
+    border-radius: 8px;
+}
+.section{
+    background-color: rgb(114, 90, 151);
+    height: 300px;
+    border: 3px solid purple;
+   
+}
+.section h2{
+    padding-top: 50px;
+    font-family: sans-serif;
+}
+.section input[type=text]{
+    width: 300px;
+    border-radius: 5px;
+    padding: 8px;
+    
+}
+.testimonies{
+    background-color: purple;
+    border: 5px solid yellow;
+   
+    
+}
+.testimonies p{
+    color: black;
+}
+.cocktails{
+    background-color: orange;
+}
+.cocktails h2{
+    color: white;
+    padding-top: 20px; 
+}
+.deliverymen{
+    text-align: center;
+    
+}
+footer{
+    background-color: darkgray;
+}
+.logo img{
+    height: 50px;
+    width: 150px;
+    
+}
+.navigation{
+    padding-top: 20px;
+}
+
+.signup{
+    background-color: rgb(21, 112, 21);
+    height: 350px; 
+}
+.signupheader{
+    background-color: rgb(21, 121, 21);
+}
+.signupheader img{
+    height: 50px;
+    width: 150px;
+    padding-left: 50px;
+ }
+ .loginheader{
+     background-color: palevioletred;
+ }
+ .loginheader img{
+    height: 50px;
+    width: 150px;
+    padding-left: 50px;
+ }
+ .dashboard{
+     background-color: cornflowerblue;
+ }
+ .howitworks{
+     height: 350px;
+     padding-top: 25px;
+ }
+ .how  h2{
+
+    border:3px solid black;
+ }
