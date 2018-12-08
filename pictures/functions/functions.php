@@ -37,7 +37,7 @@ function selectProductAllProduct() {
 
     $conn = $GLOBALS['conn'];
 
-    $sql = "SELECT * FROM products LIMIT 3" OR die(mysqli_error($conn));
+    $sql = "SELECT * FROM products LIMIT 6" OR die(mysqli_error($conn));
 
     $result = mysqli_query($conn, $sql);
 

@@ -45,7 +45,7 @@ $productData = selectProductAllProduct();
             </div>
 
             <div class="col">
-                <a href="login.html"><button type="submit" class="btn btn-secondary mr-5"> Order now</button></a>
+                <a href="signup.php"><button type="submit" class="btn btn-secondary mr-5"> Order now</button></a>
             </div>
 
         </div>
@@ -65,10 +65,10 @@ $productData = selectProductAllProduct();
 
                 <ul class="navbar-nav" >
                   <li class="nav-item">
-                    <a class="nav-link" href="signup.html">Sign Up</a>
+                    <a class="nav-link" href="signup.php">Sign Up</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="login.html">Log In</a>
+                    <a class="nav-link" href="login.php">Log In</a>
                   </li>
                   
                 </ul>
@@ -116,156 +116,68 @@ $productData = selectProductAllProduct();
 
 <div class="container">
 
-    <div class="col">
-        <?php
+
+    <div class="row">
+    <?php
 
         foreach ($productData as $productData) {
-          echo " <div class='row'>" ;
-           echo " <div class='col-3 padding-0'>" ;
-               echo "<div class='card'   style=' width:15rem;'>" ;
-                  echo " <img class='card' src='food9.jpg' alt='card image cap'>" ; 
-                   echo "<div class='card-body'> " ;   
-                      echo "<p class='card-text'> " ;     
-                         echo "".$productData['name']." £".$productData['price']. "";   
-                          echo "<p><a href='checkout.html'>Purchase</a></p>" ;     
-                        echo "</p>";
-                    echo "</div>";    
-              echo "</div>";
 
-           echo "</div>" ;
+        echo '<div class="col-md-4 mb-3">';
+        echo '<div class="card">';
+        echo '<img class="card-img-top" src="' . $productData['image'] . '" alt="Card image cap">';
+        echo '<div class="card-body">';
+        echo '<h5 class="card-title">' . $productData['name'] . '</h5>';
+        echo '<h6 class="card-subtitle mb-2 text-muted">' . $productData['price'] . '</h6>';
+        echo '<button data-toggle="modal" data-target="#product_' . $productData['id']. '" role="button" class="btn btn-primary text-white">Order Now</button>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+
+        //Modal
+        echo '<form action="orderform.php" method="POST" >';
+        echo '<div class="modal modal-lg fade" id="product_' . $productData['id'] . '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">';
+        echo '<div class="modal-dialog" role="document">';
+        echo '<div class="modal-content">';
+        echo '<div class="modal-header">';
+        echo '<h5 class="modal-title" id="exampleModalLabel">' . $productData['name'] . ' - ' . $productData['price'] . '</h5>';
+        echo '<button type="button" class="close" data-dismiss="modal" aria-label="Close">';
+        echo '<span aria-hidden="true">&times;</span>';
+        echo '</button>';
+        echo '</div>';//header
+        echo '<div class="modal-body">';
+
+        echo '<input type="hidden" name="product_id" value="'.$productData['id'].'">';
+
+        echo '<div class="form-group">';
+        echo '<label>Name</label>';
+        echo '<input type="text" name="customer_name" class="form-control" required>';
+        echo '</div>';//form-group
+
+        echo '<div class="form-group">';
+        echo '<label>Phone Number</label>';
+        echo '<input type="number" name="phone_number" class="form-control" required>';
+        echo '</div>';//form-group
+
+        echo '<div class="form-group">';
+        echo '<label>Address</label>';
+        echo '<textarea rows="3" name="address" class="form-control" required></textarea>';
+        echo '</div>';//form-group
+
+        echo '</div>';//body
+        echo '<div class="modal-footer">';
+        echo '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>';
+        echo '<button type="submit" class="btn btn-primary">Place Order</button>';
+        echo '</div>';//footer
+        echo '</div>';//content
+        echo '</div>';//modal-dialog
+        echo '</div>';//modal
+        echo '</form>';
 
         }
 
-
-
         ?>
-    
-
-            <!-- 
-
-
-
-             <div class="col-3 padding-0">
-                <div class="card" style="width: 15rem;">
-                    <img class="card" src="food8.jpg" alt="card image cap">
-                    <div class="card-body">
-                        <p class="card-text">
-                            Burger $200
-                            <p><a href="">Purchase</a></p>
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-            <div class="col-3 padding-0">
-                    <div class="card" style="width: 15rem;">
-                        <img class="card" src="food4.jpg" alt="card image cap">
-                        <div class="card-body">
-                            <p class="card-text">
-                                Drink $10
-                                <p><a href="">Purchase</a></p>
-                            </p>
-    
-                        </div>
-    
-    
-                    </div>
-    
-            </div>
-            -->
-
-
         </div>
-
-        <br>
-        <br>
-
-         <?php
-
-        foreach ($productData as $productData) {
-             echo " <div class='row'>" ;
-                echo " <div class='col-3 padding-0'>" ;
-                      echo "<div class='card'   style=' width:15rem;'>" ;
-                         echo " <img class='card' src='food4.jpg' alt='card image cap'>" ; 
-                             echo "<div class='card-body'> " ;   
-                                echo "<p class='card-text'> " ;     
-                                      echo "".$productData['name']." £".$productData['price']. "";   
-                                     echo "<p><a href='checkout.html'>Purchase</a></p>" ;     
-                                echo "</p>";
-                             echo "</div>";    
-                        echo "</div>";
-            echo "</div>" ;
-        }
-        ?>
-
-
-
-
-
-         <!-- 
-         <div class="row">
-            
-            <div class="col-3 padding-0">
-                <div class="card" style="width: 15rem;">
-                    <img class="card" src="food2.jpg" alt="card image cap">
-                        <div class="card-body">
-                            <p class="card-text">
-                                    Veggies$5
-                                    <p><a href="">Purchase</a></p>
-                            </p>
-            
-                        </div>
-            
-            
-                </div>
-            
-            </div>
-
-            <div class="col-3 padding-0">
-                <div class="card" style="width: 15rem;">
-                    <img class="card" src="food1.jpg" alt="card image cap">
-                        <div class="card-body">
-                            <p class="card-text">
-                                    Hotdog $50
-                                    <p><a href="">Purchase</a></p>
-                            </p>
-                        </div>
-
-                </div>
-
-            </div>
-            
-            <div class="col-3  padding-0">
-                    <div class="card" style="width: 15rem;">
-                        <img class="card" src="food6.jpg" alt="card image cap">
-                            <div class="card-body">
-                                <p class="card-text">
-                                        Lunch $15
-                                    <p><a href="">Purchase</a></p>
-                                </p>
-                            </div>
     
-                    </div>
-    
-             </div>
-
-           
-    
-
-             </div>
-            
-
-        </div>
-
- 
-    </div>
-
-    -->
-
 </div>
 <br>
 <br>
@@ -290,16 +202,18 @@ $productData = selectProductAllProduct();
         <br>
         <div class="row how">
 
-
             <div class="col">
                 <h2>ORDER</h2>
             </div>
+
             <div class="col">
                  <h2>RECEIVE</h2>   
             </div>
+
             <div class="col">
                 <h2>PAY</h2>
             </div>
+
             <div class="col">
                 <h2>ENJOY</h2>
             </div>
@@ -320,7 +234,7 @@ $productData = selectProductAllProduct();
     <div class="container-fluid cocktails text-center">
         <h2> COCKTAILS FOR YOUR OFFICE EVENTS</h2>
         <br>
-        <p>Receive order in less than 5mins! <a href="login.html"><button type="submit " class="btn btn-light">Order now!</button></a></p>
+        <p>Receive order in less than 5mins! <a href="signup.html"><button type="submit " class="btn btn-light">Order now!</button></a></p>
         <br>
         <div class="row pb-3">
             <div class="col">
@@ -382,7 +296,7 @@ $productData = selectProductAllProduct();
             
                   <div class="col-3">
     
-                     <h6> <address>NO 5, Roxwell street NBC  Partial addresses: Main Highway Otaki
+                        <h6> <address>NO 5, Roxwell street NBC  Partial addresses: Main Highway Otaki
                             Postcodes: 5022.
                             PO Box:  39100, Howick.
                             Community Boxes: CMB C5, Huntly.
@@ -392,43 +306,38 @@ $productData = selectProductAllProduct();
            
     
                   <div class="col-6 text-right">
-                   <h6>Follow us</h6> 
-            
-                  <a class="fb-ic">
-                    <i class="fa fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                  </a>
+                      <h6>Follow us</h6> 
+                         <a class="fb-ic">
+                             <i class="fa fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                         </a>
                   
-                  <a class="tw-ic">
-                    <i class="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                  </a>
+                         <a class="tw-ic">
+                             <i class="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                         </a>
                  
-                  <a class="gplus-ic">
-                    <i class="fa fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                  </a>
+                         <a class="gplus-ic">
+                             <i class="fa fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                         </a>
                 
-                  <a class="li-ic">
-                    <i class="fa fa-linkedin fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                  </a>
+                         <a class="li-ic">
+                              <i class="fa fa-linkedin fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                         </a>
                 
-                  <a class="ins-ic">
-                    <i class="fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                  </a>
+                         <a class="ins-ic">
+                              <i class="fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                         </a>
                   
-                  <a class="pin-ic">
-                    <i class="fa fa-pinterest fa-lg white-text fa-2x"> </i>
-                  </a>
-
-
-
-                  </div>
+                         <a class="pin-ic">
+                              <i class="fa fa-pinterest fa-lg white-text fa-2x"> </i>
+                         </a>
+                   </div>
              
     
             </div>
          
     
-        </div>
-      
-        <div class="footer-copyright text-center py-3">© 2018 Copyright Lara's Kitchen
+    
+            <div class="footer-copyright text-center py-3">© 2018 Copyright Lara's Kitchen</div>
          
        
         </div>

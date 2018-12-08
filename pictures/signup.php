@@ -1,3 +1,14 @@
+<?php
+
+$conn = mysqli_connect('localhost','root','','project');
+
+if(!$conn){
+    echo "not connected to database";
+ }
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +23,7 @@
 
 
     <div class="container-fluid signupheader">
-       <a href="menu.html"><img src="laras kitchen.jpg"> </a>
+       <a href="menu.php"><img src="laras kitchen.jpg"> </a>
         
     </div>
     <br>
@@ -22,7 +33,7 @@
 
     <div class="container">
 
-        <form action="form.php" method="POST" enctype="multipart/form-data">
+        <form action="form.php" method="POST" >
 
             <div class="row">
             
@@ -47,7 +58,6 @@
 
         
            <div class="row">
-            
               <div class="col">
                    <div class="form-group">
                         <label for="email">Email</label>
@@ -59,17 +69,12 @@
                     <div class="form-group col-6">
                             <label for="phoneno">PhoneNo</label>
                             <input type="number" class="form-control" id="phoneno" name="phoneno" placeholder="phoneno" required>
-                      </div>
-    
-                  
-                  
+                      </div>                          
               </div>
-    
            </div>
     
               
             <div class="row">
-
                 <div class="col-6">
                   <label for="address"> Address</label>          
                   <input type="text" class="form-control col-6" id="address" name="address" placeholder="address" required>
