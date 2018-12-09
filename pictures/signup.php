@@ -40,7 +40,7 @@ if(!$conn){
                         <div class="col">
                                 <div class="form-group">
                                         <label for="Firstname">Firstname</label>
-                                        <input type="text" class="form-control" id="Firstname" name="Firstname" placeholder="Firstname" required>
+                                        <input type="text" class="form-control" id="Firstname" name="firstname" placeholder="Firstname" required>
                                    </div>
                         </div>
               
@@ -48,7 +48,7 @@ if(!$conn){
               
                             <div class="form-group">
                                   <label for="Lastname">Lastname</label>
-                                  <input type="text" class="form-control" id="Lastname" name="Lastname" placeholder="Lastname" required>
+                                  <input type="text" class="form-control" id="Lastname" name="lastname" placeholder="Lastname" required>
                             </div>
                             
                         </div>
@@ -94,14 +94,14 @@ if(!$conn){
              <div class="form-check">
                   <label>Gender</label>
                   <br>
-                  <input class="form-check-input" type="radio" value="option1" id="Female">
-                  <label class="form-check-label" for="Female">Female</label>
+                  <input class="form-check-input" type="radio" value="female" name="female" id="Female">
+                  <label class="form-check-label" for="Female" >Female</label>
                   <br>
-                  <input class="form-check-input" type="radio" value="option2" id="Male">
+                  <input class="form-check-input" type="radio" value="male" name="male" id="Male">
                   <label class="form-check-label" for="Female">Male</label>
              </div>
              <br>
-             <button class="btn btn-success btn-small" type="submit">Submit</button>
+             <button class="btn btn-success btn-small" type="submit" name="submit">Submit</button>
     
         </form>
     

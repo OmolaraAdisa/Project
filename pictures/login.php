@@ -1,12 +1,3 @@
-<?php
-
-$conn = mysqli_connect('localhost','root','','project');
-
-if(!$conn){
-    echo "not connected to database";
- }
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -21,7 +12,7 @@ if(!$conn){
 </head>
 <body>
 
-    <form  action="login.php" method="POST">
+    <form  action="loginform.php" method="POST">
 
         <div class="container-fluid loginheader">
                <a href="menu.php"><img src="laras kitchen.jpg"></a>
@@ -43,12 +34,8 @@ if(!$conn){
         </div>
         <br>
         <div class="container">
-        <button class="btn btn-success btn-small" type="submit">Submit</button>
+        <button class="btn btn-success btn-small" type="submit" name="submit">Submit</button>
         </div>
-
-
-
-
     </form>
 
     <script src="js/jquery-3.3.1.min.js"></script>

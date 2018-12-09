@@ -1,16 +1,10 @@
 <?php
-
-$conn = mysqli_connect('localhost','root','','project');
-
-if(!$conn){
-    echo "not connected to database";
- }
-
+require('./init/db_connect.php');
 ?>
 
 <?php
 
-$GLOBALS['conn'] = $conn;
+$GLOBALS['connect'] = $connect;
 
 
 ?>
@@ -19,15 +13,15 @@ $GLOBALS['conn'] = $conn;
 
 function addProduct($name, $price) {
 
-    $conn = $GLOBALS['conn'];
+    $connect = $GLOBALS['connect'];
 
     $sql = "INSERT INTO products(name, price) VALUES ('$name', '$price')" ;
     
-    $result = mysqli_query($conn, $sql);
+    $result = mysqli_query($connect, $sql);
 
     if(!$result) {
 
-        echo('Unable to insert product into Database'. mysqli_error($conn));
+        echo('Unable to insert product into Database'. mysqli_error($connect));
     };
 
 }
@@ -35,14 +29,14 @@ function addProduct($name, $price) {
 
 function selectProductAllProduct() {
 
-    $conn = $GLOBALS['conn'];
+    $connect = $GLOBALS['connect'];
 
-    $sql = "SELECT * FROM products LIMIT 6" OR die(mysqli_error($conn));
+    $sql = "SELECT * FROM products LIMIT 6" OR die(mysqli_error($connect));
 
-    $result = mysqli_query($conn, $sql);
+    $result = mysqli_query($connect, $sql);
 
     if(!$result) {
-        echo ('Unable to get product from database '. mysqli_error($conn));
+        echo ('Unable to get product from database '. mysqli_error($connect));
     }
 
     $productData = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -52,6 +46,28 @@ function selectProductAllProduct() {
 
     }else {
         return $productData;
+    }
+}
+
+function fetchOrderData() {
+
+    $connect = $GLOBALS['connect'];
+
+    $sql = "SELECT * FROM orders LIMIT 6" OR die(mysqli_error($connect));
+
+    $result = mysqli_query($connect, $sql);
+
+    if(!$result) {
+        echo ('Unable to get product from database '. mysqli_error($connect));
+    }
+
+    $OrderData = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+    if(empty($OrderData)) {
+
+    }else {
+        return  $OrderData;
     }
 }
 

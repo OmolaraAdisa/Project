@@ -4,16 +4,6 @@ require("./functions/functions.php")
 
 <?php
 
-$conn = mysqli_connect('localhost','root','','project');
-
-if(!$conn){
-    echo "not connected to database";
- }
-
-?>
-
-<?php
-
 $productData = selectProductAllProduct();
 
 ?>
@@ -38,14 +28,14 @@ $productData = selectProductAllProduct();
     <br>
     <div class="container-fluid header" style="text-align:center">
         <div class="row">
-            <div class="col">
+            <div class="col" >
                     <p class="lead font-weight-normal ml-5">
                         Top deals, just for you!
                     </p>
             </div>
 
             <div class="col">
-                <a href="signup.php"><button type="submit" class="btn btn-secondary mr-5"> Order now</button></a>
+                <a href="signup.php"><button type="submit" class="btn btn-secondary mr-5"style="margin-top:4px" > Order now</button></a>
             </div>
 
         </div>
@@ -134,7 +124,7 @@ $productData = selectProductAllProduct();
         echo '</div>';
 
         //Modal
-        echo '<form action="orderform.php" method="POST" >';
+        echo '<form action="./functions/orderform.php" method="POST" >';
         echo '<div class="modal modal-lg fade" id="product_' . $productData['id'] . '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">';
         echo '<div class="modal-dialog" role="document">';
         echo '<div class="modal-content">';
@@ -166,7 +156,7 @@ $productData = selectProductAllProduct();
         echo '</div>';//body
         echo '<div class="modal-footer">';
         echo '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>';
-        echo '<button type="submit" class="btn btn-primary">Place Order</button>';
+        echo '<button type="submit" class="btn btn-primary" name="submit">Place Order</button>';
         echo '</div>';//footer
         echo '</div>';//content
         echo '</div>';//modal-dialog

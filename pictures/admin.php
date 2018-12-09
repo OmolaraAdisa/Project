@@ -1,14 +1,14 @@
 <?php
 
-
-$conn = mysqli_connect('localhost','root','','project');
-
-if(!$conn){
-    echo "not connected to database";
- }
-
+require('./init/db_connect.php');
+require('./functions/functions.php');
 
 ?>
+
+<?php
+$OrderData = fetchOrderData();
+?>
+
 <!doctype <!DOCTYPE html>
 <html>
 <head>
@@ -21,9 +21,14 @@ if(!$conn){
 </head>
 <body>
 
+
+
+
+
+
     <div class="container">
 
-         <table class="table">
+       <table class="table">
             <thead>
               <tr>
                  <th scope="col">id</th>
@@ -33,40 +38,28 @@ if(!$conn){
                  <th scope="col">address</th>
               </tr>
             </thead>
+  <?php
+  foreach($OrderData as $OrderData) {
+    echo "<tbody>";
+    echo "<tr>";
+     echo '<th scope="row">'.$OrderData['id'].'</th>';
+     echo "<td>".$OrderData['product_id']."</td>" ;
+     echo "<td>".$OrderData['customer_name']."</td>" ;
+     echo "<td>".$OrderData['phone_number']."</td>" ;
+     echo "<td>".$OrderData['address']."</td>" ;
+     
+   echo "</tr>";
 
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-             </tr>
+echo "</tbody>";
 
-             <tr>
-               <th scope="row">2</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-            </tr>
-
-            <tr>
-               <th scope="row">3</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-            
-            </tr>
-  </tbody>
+  }
+  ?>
 </table>
 
 
 </div>
+
+
 
 
 <script src="js/jquery-3.3.1.min.js"></script>

@@ -15,14 +15,15 @@ if(isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password= $_POST['password'];
     $phoneno= $_POST['phoneno'];
-    $gender= $_POST['gender'];
+    $male= $_POST['male'];
+    $female= $_POST['female'];
     $address= $_POST['address'];
-    $date= $_POST['date'];
 
     //echo $firstname.' '.$address; exit; 
 
-    $sql = "INSERT INTO customers (firstname, lastname,email,password,phoneno,gender,address,date) 
-    VALUES ('$firstname', '$lastname','$email','$password','$phoneno','$gender','$address',NOW())";
+    
+    $sql = "INSERT INTO signup (firstname, lastname,email,password,phoneno,male,address, female) 
+    VALUES ('$firstname', '$lastname','$email','$password','$phoneno','$male','$address', '$female')";
 
 
     $result = mysqli_query($connect, $sql);
