@@ -19,7 +19,7 @@ if(isset($_POST['submit'])) {
        die(mysqli_error($connect));
    }
    else{
-       echo "submitted successfuly!";
+       echo "you will receive your order in few mins! kindly be informed that this is a pay on delivery service";
    }
    
    
