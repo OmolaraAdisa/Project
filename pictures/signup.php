@@ -33,7 +33,7 @@ if(!$conn){
 
     <div class="container">
 
-        <form action="form.php" method="POST" >
+        <form action="signupform.php" method="POST" >
 
             <div class="row">
             
