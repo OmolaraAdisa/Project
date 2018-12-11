@@ -48,7 +48,7 @@ $productData = selectProductAllProduct();
 
     <div class="container navigation" >
         <div class="logo float-left">
-                <img src="laras kitchen.jpg" alt="Sample image">
+                <img src="img/laras kitchen.jpg" alt="Sample image">
         </div>
            
         <nav class="navbar navbar-expand-sm bg-light float-right">
@@ -75,11 +75,11 @@ $productData = selectProductAllProduct();
 
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="food7.jpg" alt="first slide">
+                    <img class="d-block w-100" src="img/food7.jpg" alt="first slide">
                 </div>
     
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="food4.jpg" alt="second slide">
+                    <img class="d-block w-100" src="img/food4.jpg" alt="second slide">
                 </div>
                 
                 
@@ -174,7 +174,7 @@ $productData = selectProductAllProduct();
 
 <div class=" container-fluid testimonies text-center">
         <p>USER TESTIMONIES</p>
-        <img src="woman.jpg" alt="sample image" width="200px" height="200px">
+        <img src="img/woman.jpg" alt="sample image" width="200px" height="200px">
          <br>
         <p>I haven't found a better delivery service.Tested and trusted!
         <p>Sharon Cobbs</p>
@@ -228,15 +228,15 @@ $productData = selectProductAllProduct();
         <br>
         <div class="row pb-3">
             <div class="col">
-                <img src="cock1.jpg" alt="Sample image">
+                <img src="img/cock1.jpg" alt="Sample image">
                 <p>$150</p>
             </div>
             <div class="col">
-                    <img src="cock2.jpg" alt="Sample image">
+                    <img src="img/cock2.jpg" alt="Sample image">
                 <p>$150</p>
             </div>
             <div class="col">
-                    <img src="cock3.jpg" alt="Sample image">
+                    <img src="img/cock3.jpg" alt="Sample image">
                 <p>$200</p>
             </div>
 
@@ -256,21 +256,21 @@ $productData = selectProductAllProduct();
         <br>
         <div class="row ">
             <div class="col">
-                <img src="deliver 1.jpg" alt="Sample image">
+                <img src="img/deliver 1.jpg" alt="Sample image">
                 <p>ARON</p>
 
             </div>
             <div class="col">
-                <img src="deliver 2.jpg" alt="Sample image">
+                <img src="img/deliver 2.jpg" alt="Sample image">
                 <p>JACK</p>
 
             </div>
             <div class="col">
-                <img src="deliver 3.jpg" alt="Sample image">
+                <img src="img/deliver 3.jpg" alt="Sample image">
                 <p>RAMSEY</p>
             </div>
             <div>
-                <img src="deliver 4.jpg" alt="Sample image">
+                <img src="img/deliver 4.jpg" alt="Sample image">
                 <p>ROWLAND</p>
             </div>
 

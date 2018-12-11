@@ -1,4 +1,4 @@
-The php files are located in the 'pictures' folder
+
 menu.php = Home page
 signup.php = sign up form
 admin.php = order received table
