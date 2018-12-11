@@ -23,7 +23,7 @@ if(!$conn){
 
 
     <div class="container-fluid signupheader">
-       <a href="menu.php"><img src="laras kitchen.jpg"> </a>
+       <a href="menu.php"><img src="img/laras kitchen.jpg"> </a>
         
     </div>
     <br>
