@@ -53,7 +53,8 @@ function fetchOrderData() {
 
     $connect = $GLOBALS['connect'];
 
-    $sql = "SELECT * FROM orders LIMIT 6" OR die(mysqli_error($connect));
+    $sql = "SELECT * FROM orders INNER JOIN products ON products.id = orders.product_id"
+     OR die(mysqli_error($connect));
 
     $result = mysqli_query($connect, $sql);
 

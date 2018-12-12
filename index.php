@@ -95,7 +95,7 @@ $productData = selectProductAllProduct();
 
         <form>
             <input type="text" class="formcontrol" placeholder="search">
-            <input type="text" class="formcontrol" placeholder="search">
+            
             <button type="submit" class="btn">Show result</button>
         </form>
 
@@ -286,11 +286,11 @@ $productData = selectProductAllProduct();
             
                   <div class="col-3">
     
-                        <h6> <address>NO 5, Roxwell street NBC  Partial addresses: Main Highway Otaki
+                        <h6> <address>NO 5, ShAGAM EXPRESSWAY  Partial addresses: Dugbe, Queen's cinema
                             Postcodes: 5022.
-                            PO Box:  39100, Howick.
-                            Community Boxes: CMB C5, Huntly.
-                            Counter Delivery: Counter Delivery, Carters Beach PostCentre, Westport</address>
+                            PO Box:  39100, Agodi.
+                            Community Boxes: CMB C5, Agodi.
+                            Counter Delivery: Counter Delivery, Bus stop Gate PostCentre, Ibadan</address>
                         </h6>   
                   </div>
            

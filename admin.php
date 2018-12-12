@@ -2,7 +2,14 @@
 
 require('./init/db_connect.php');
 require('./functions/functions.php');
-
+session_start();
+?>
+<?php
+if (empty($_SESSION['username'])) {
+  header('location: ./login.php');
+}else{
+  $username = $_SESSION['username'];
+}
 ?>
 
 <?php
@@ -27,7 +34,7 @@ $OrderData = fetchOrderData();
 
 
     <div class="container">
-
+    <h1>ORDERS</h1>
        <table class="table">
             <thead>
               <tr>
@@ -43,7 +50,7 @@ $OrderData = fetchOrderData();
     echo "<tbody>";
     echo "<tr>";
      echo '<th scope="row">'.$OrderData['id'].'</th>';
-     echo "<td>".$OrderData['product_id']."</td>" ;
+     echo "<td>".$OrderData['name']."</td>" ;
      echo "<td>".$OrderData['customer_name']."</td>" ;
      echo "<td>".$OrderData['phone_number']."</td>" ;
      echo "<td>".$OrderData['address']."</td>" ;
@@ -58,6 +65,8 @@ echo "</tbody>";
 
 
 </div>
+
+<a href="logout.php">Logout</a>
 
 
 
