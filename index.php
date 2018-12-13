@@ -34,9 +34,7 @@ $productData = selectProductAllProduct();
                     </p>
             </div>
 
-            <div class="col">
-                <a href="signup.php"><button type="submit" class="btn btn-secondary mr-5"style="margin-top:4px" > Order now</button></a>
-            </div>
+            
 
         </div>
         
@@ -54,9 +52,7 @@ $productData = selectProductAllProduct();
         <nav class="navbar navbar-expand-sm bg-light float-right">
 
                 <ul class="navbar-nav" >
-                  <li class="nav-item">
-                    <a class="nav-link" href="signup.php">Sign Up</a>
-                  </li>
+                  
                   <li class="nav-item">
                     <a class="nav-link" href="login.php">Admin</a>
                   </li>
@@ -224,7 +220,7 @@ $productData = selectProductAllProduct();
     <div class="container-fluid cocktails text-center">
         <h2> COCKTAILS FOR YOUR OFFICE EVENTS</h2>
         <br>
-        <p>Receive order in less than 5mins! <a href="signup.html"><button type="submit " class="btn btn-light">Order now!</button></a></p>
+        <p>Receive order in less than 5mins! </p>
         <br>
         <div class="row pb-3">
             <div class="col">
